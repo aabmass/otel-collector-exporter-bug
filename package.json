@@ -1,0 +1,23 @@
+{
+  "name": "otel-web-collector-exporter-bug",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aabmass/otel-web-collector-exporter-bug.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aabmass/otel-web-collector-exporter-bug/issues"
+  },
+  "homepage": "https://github.com/aabmass/otel-web-collector-exporter-bug#readme",
+  "dependencies": {
+    "@opentelemetry/exporter-collector": "^0.14.0"
+  }
+}
