@@ -1,9 +1,9 @@
-import {BatchSpanProcessor} from '@opentelemetry/tracing';
-import {WebTracerProvider} from '@opentelemetry/web';
-import {CollectorTraceExporter} from '@opentelemetry/exporter-collector';
+import { BatchSpanProcessor } from "@opentelemetry/tracing";
+import { WebTracerProvider } from "@opentelemetry/web";
+import { CollectorTraceExporter } from "@opentelemetry/exporter-collector";
 
 const collectorOptions = {
-  url: '/v1/trace',
+  url: "/v1/trace",
   concurrencyLimit: 5,
 };
 
@@ -18,9 +18,9 @@ provider.addSpanProcessor(
 
 provider.register();
 
-const tracer = provider.getTracer('index.tsx');
+const tracer = provider.getTracer("index.tsx");
 
 setInterval(() => {
-  tracer.startSpan('Test').end();
+  tracer.startSpan("Test").end();
   console.log((exporter as any)._sendingPromises);
 }, 1000);
