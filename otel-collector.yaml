@@ -1,0 +1,27 @@
+receivers:
+  otlp:
+    protocols:
+      http:
+
+exporters:
+  stackdriver:
+    project: otel-starter-project
+    use_insecure: false
+  logging:
+    loglevel: debug
+    sampling_initial: 5
+    sampling_thereafter: 1
+
+processors:
+  batch:
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [logging]
+    metrics:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [stackdriver]
